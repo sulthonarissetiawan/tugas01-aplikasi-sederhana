@@ -1,61 +1,53 @@
 import 'package:flutter/material.dart';
-import '/screens/main_screen.dart'; 
-// Mengimpor halaman utama (MainScreen) yang akan dituju setelah login berhasil.
+// Tidak perlu mengimpor 'main_screen.dart' lagi karena navigasi sudah terpusat.
 
 /// Widget ini merupakan tampilan halaman Login.
-/// Di sini pengguna bisa memasukkan email dan password untuk masuk ke aplikasi.
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Menggunakan Scaffold untuk struktur dasar halaman (AppBar, Body, dsb)
-      
-      // Mengatur warna latar belakang menjadi hitam seperti tema Netflix
       backgroundColor: Colors.black,
-
-      // Menambahkan padding di seluruh sisi halaman
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
-          // Menyusun widget secara vertikal dan menempatkannya di tengah layar
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch, // biar tombol penuh secara horizontal
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // ====================== LOGO / NAMA APLIKASI ======================
             const Text(
               'FLUTTERFLIX',
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.red,           // Warna teks merah khas Netflix
-                fontSize: 40,                // Ukuran teks besar
-                fontWeight: FontWeight.bold, // Huruf tebal
-                letterSpacing: 2.0,          // Spasi antar huruf
+                color: Colors.red,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 2.0,
               ),
             ),
-            const SizedBox(height: 50), // Jarak antara logo dan input pertama
+            const SizedBox(height: 50),
 
             // ====================== INPUT EMAIL ======================
             TextField(
-              keyboardType: TextInputType.emailAddress, // Keyboard khusus email
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
-                labelText: 'Email',                     // Label untuk input
-                labelStyle: TextStyle(color: Colors.grey[400]), // Warna label
-                filled: true,                           // Mengisi background input
-                fillColor: Colors.grey[800],            // Warna abu-abu gelap
+                labelText: 'Email',
+                labelStyle: TextStyle(color: Colors.grey[400]),
+                filled: true,
+                fillColor: Colors.grey[800],
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0), // Membulatkan sudut input
-                  borderSide: BorderSide.none,              // Menghapus border default
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: BorderSide.none,
                 ),
               ),
-              style: const TextStyle(color: Colors.white), // Warna teks input putih
+              style: const TextStyle(color: Colors.white),
             ),
             const SizedBox(height: 20),
 
             // ====================== INPUT PASSWORD ======================
             TextField(
-              obscureText: true, // Menyembunyikan teks (diganti menjadi titik-titik)
+              obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Password',
                 labelStyle: TextStyle(color: Colors.grey[400]),
@@ -73,24 +65,23 @@ class LoginScreen extends StatelessWidget {
             // ====================== TOMBOL LOGIN ======================
             ElevatedButton(
               onPressed: () {
-                // Saat tombol ditekan, navigasi ke halaman utama aplikasi (MainScreen)
-                // Menggunakan pushReplacement agar user tidak bisa kembali ke halaman login
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(builder: (context) => const MainScreen()),
-                );
+                // ================= PERUBAHAN DI SINI =================
+                // Navigasi sekarang memanggil nama route '/main'
+                // yang sudah didaftarkan di main.dart.
+                Navigator.pushReplacementNamed(context, '/main');
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red, // Warna tombol merah khas Netflix
-                padding: const EdgeInsets.symmetric(vertical: 16.0), // Tinggi tombol
+                backgroundColor: Colors.red,
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0), // Membulatkan tepi tombol
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
               ),
               child: const Text(
                 'Login',
                 style: TextStyle(
                   fontSize: 18,
-                  color: Colors.white, // Warna teks tombol putih
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -100,3 +91,4 @@ class LoginScreen extends StatelessWidget {
     );
   }
 }
+

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/models/content_model.dart';
+import '../models/content_model.dart';
 
 /// Widget ini berfungsi untuk menampilkan satu baris konten
 /// yang bisa di-scroll ke samping (horizontal carousel),
@@ -72,3 +72,4 @@ class ContentCarousel extends StatelessWidget {
     );
   }
 }
+

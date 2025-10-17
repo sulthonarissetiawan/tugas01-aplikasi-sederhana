@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '/screens/dashboard_screen.dart';
-import '/screens/profile_screen.dart';
+import 'dashboard_screen.dart';
+import 'profile_screen.dart';
 
 /// Widget ini merupakan halaman utama (MainScreen)
 /// yang berisi navigasi bawah (BottomNavigationBar)
@@ -48,12 +48,12 @@ class _MainScreenState extends State<MainScreen> {
         // Item navigasi bawah, masing-masing dengan ikon dan label
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),     // Ikon untuk tab Dashboard
-            label: 'Dashboard',         // Label teks di bawah ikon
+            icon: Icon(Icons.home),    // Ikon untuk tab Dashboard
+            label: 'Dashboard',        // Label teks di bawah ikon
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),   // Ikon untuk tab Profile
-            label: 'Profile',           // Label teks di bawah ikon
+            icon: Icon(Icons.person),  // Ikon untuk tab Profile
+            label: 'Profile',          // Label teks di bawah ikon
           ),
         ],
         currentIndex: _selectedIndex,    // Menentukan tab yang aktif
@@ -67,3 +67,4 @@ class _MainScreenState extends State<MainScreen> {
     );
   }
 }
+

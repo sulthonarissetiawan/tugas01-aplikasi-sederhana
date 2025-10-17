@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '/models/content_model.dart';      // Mengimpor model data "Content"
-import '/widgets/content_carousel.dart'; // Mengimpor widget untuk menampilkan konten dalam bentuk carousel
+import '../models/content_model.dart';      // Mengimpor model data "Content"
+import '../widgets/content_carousel.dart'; // Mengimpor widget untuk menampilkan konten dalam bentuk carousel
 
 /// Halaman utama setelah login.
 /// Menampilkan beberapa kategori konten seperti "Trending", "Anime", dan "Kids".
@@ -52,7 +52,7 @@ class DashboardScreen extends StatelessWidget {
           ),
         ),
         backgroundColor: Colors.black, // Warna AppBar sama dengan background
-        elevation: 0,                  // Menghapus bayangan AppBar
+        elevation: 0,                // Menghapus bayangan AppBar
       ),
 
       // ========================= BODY =========================
@@ -84,3 +84,4 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 }
+
